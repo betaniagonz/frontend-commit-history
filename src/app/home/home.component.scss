@@ -1,0 +1,60 @@
+.home-container{
+  height: calc(100% - 81.8px);
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+
+  .home-content{
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+  }
+
+  .banner{
+    width: 40%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .banner-content{
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .text{
+      padding: 65px 115px;      
+      font-size: 15px;
+      text-align: center;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px;
+
+      .bold{
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 29px;
+      }
+    }
+
+    .img-content{
+      display: flex;
+      justify-content: center;
+
+      .image{
+        width: 300px;
+      }
+    }
+
+    
+  }
+
+  .content{
+    width: 60%;
+    height: 100%;
+    background-color: cadetblue;
+  }
+}

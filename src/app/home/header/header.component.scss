@@ -1,0 +1,19 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar{
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  background-color: white;
+
+  .title{
+    margin-left: 10px;
+    color: #0B132A;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
