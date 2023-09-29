@@ -53,6 +53,19 @@
         border: 3.5px solid #F53838;
         border-radius: 50%;
       }
+
+      .tecnologies{
+        margin-top: 20px; 
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        p{
+          width: 50%;
+        }
+      }
     }
 
     .text{
