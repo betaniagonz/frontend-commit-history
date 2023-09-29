@@ -3,13 +3,13 @@ import { GithubService } from 'src/app/services/github.service';
 import { IApiCommit, IApiFullRepo, IApiResponseCommit, IApiResponseRepos, IApiResponseUser } from 'src/app/services/models/github-api-models';
 import { HttpErrorResponse } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
-import { DatePipe, NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgClass, NgFor, NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-repo-information',
   standalone: true,
-  imports: [MatCardModule, NgFor, NgIf, DatePipe],
+  imports: [MatCardModule, NgFor, NgIf, DatePipe, NgClass],
   templateUrl: './repo-information.component.html',
   styleUrls: ['./repo-information.component.scss']
 })
@@ -19,6 +19,7 @@ export class RepoInformationComponent implements OnInit{
   loadingRepo = true;
   repos!: IApiFullRepo[];
   commits!: IApiCommit[];
+  cardSelected: any;
 
   ngOnInit(): void {
     this.getUserRepos();
@@ -37,7 +38,8 @@ export class RepoInformationComponent implements OnInit{
     })
   }
 
-  getRepoCommits(reponame: string){
+  getRepoCommits(reponame: string, index: number){
+    this.cardSelected = index;
     this.loadingRepo = true;
     this._githubService.getRepoCommits(reponame).subscribe({
       next: (resp: IApiResponseCommit) => {

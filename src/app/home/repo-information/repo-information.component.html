@@ -1,9 +1,10 @@
 <section class="inf-conatiner" *ngIf="!loading">
   <h2>Select a repository to show the commits</h2>
   <div class="repos">
-    <ng-container *ngFor="let repo of repos">
-      <mat-card class="card" 
-        (click)="getRepoCommits(repo.name)"
+    <ng-container *ngFor="let repo of repos; let i = index">
+      <mat-card class="card"
+        [class]="i === cardSelected ? 'selected' : ''"
+        (click)="getRepoCommits(repo.name,i)"
         *ngIf="repo.name === 'backend-commit-history' || repo.name === 'frontend-commit-history'">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image">
