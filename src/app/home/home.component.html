@@ -1,16 +1,28 @@
 <section class="home-container">
   <div class="home-content">
     <div class="banner">
-      <div class="banner-content">
-        <p class="text">here you can see your team <span class="bold">commit history!</span> </p>
-        <div class="img-content">
+      <div class="banner-content" *ngIf="!loading">
+        <img [src]="user.avatar_url" alt="" class="avatar" >
+        <p style="margin-block-start: 1em;">
+          Name: {{user.name}}
+        </p>
+        <p>
+          Bio: {{user.bio}}
+        </p>
+        <p>
+          Location: {{user.location}}
+        </p>
+        <p>
+          <a [href]="user.html_url">View On GitHub</a>
+        </p>
+        <!-- <div class="img-content">
           <img class="image" src="../../assets/svg/Illustration1.svg" alt="">
-        </div>
+        </div> -->
       </div>
       
     </div>
     <div class="content">
-      second part
+      <router-outlet></router-outlet>
     </div>
   </div>
 </section>

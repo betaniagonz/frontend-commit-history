@@ -9,3 +9,7 @@ body{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Inter', sans-serif; }
+
+.header .mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title{
+  padding: 0;
+}

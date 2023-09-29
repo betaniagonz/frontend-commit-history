@@ -1,0 +1,38 @@
+<section class="inf-conatiner" *ngIf="!loading">
+  <h2>Select a repository to show the commits</h2>
+  <div class="repos">
+    <ng-container *ngFor="let repo of repos">
+      <mat-card class="card" 
+        (click)="getRepoCommits(repo.name)"
+        *ngIf="repo.name === 'backend-commit-history' || repo.name === 'frontend-commit-history'">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image">
+            <img src="assets/images/github.png">
+          </div>
+          <mat-card-title>{{repo.name}}</mat-card-title>
+          <mat-card-subtitle>{{repo.language}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{repo.description}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+  <div class="commits">
+    <ng-container *ngIf="!loadingRepo">
+      <h2>List of commits:</h2>
+      <mat-card *ngFor="let commit of commits" class="card commit">
+        <mat-card-header class="header">
+          <div mat-card-avatar class="example-header-image">
+            <img src="assets/images/commit.png" style="width: 25px;">
+          </div>
+          <mat-card-title class="commit-messages">Message: {{commit.commit.message}}</mat-card-title>
+        </mat-card-header>
+        <p style="overflow-wrap: break-word;">SHA: {{commit.sha}}</p>
+        <mat-card-footer>Date: {{commit.commit.committer.date | date}}</mat-card-footer>
+      </mat-card>
+    </ng-container>
+  </div>
+</section>

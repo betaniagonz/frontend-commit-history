@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-presentation',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './presentation.component.html',
   styleUrls: ['./presentation.component.scss']
 })

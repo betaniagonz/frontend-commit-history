@@ -1,0 +1,43 @@
+.inf-conatiner{
+  h2{
+    margin-top: 2em;
+    text-align: center;
+    padding: 0 10px;
+  }
+  .repos{
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+
+    @media only screen and (max-width: 800px) {
+      flex-direction: column;
+    }
+  }
+
+  .card{
+    position: relative;
+    border: 2px solid #FFECEC;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .commits{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+
+    .commit{
+      padding: 20px;
+
+      .header{
+        padding: 0;
+      }
+    }
+    .commit-messages{
+      font-size: 14px;
+    }
+  }
+}

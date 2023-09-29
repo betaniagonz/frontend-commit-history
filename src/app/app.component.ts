@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { NgSwitch, NgSwitchDefault, NgSwitchCase } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './home/header/header.component';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
     standalone: true,
+    selector: 'app-root',
+    template: `
+    <app-header />
+    <router-outlet></router-outlet>
+    `,
     imports: [RouterOutlet, HeaderComponent]
 })
 export class AppComponent {
