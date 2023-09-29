@@ -15,6 +15,7 @@ import { DatePipe, NgClass, NgFor, NgIf } from '@angular/common';
 })
 export class RepoInformationComponent implements OnInit{
   private _githubService = inject(GithubService);
+  
   loading = true;
   loadingRepo = true;
   repos!: IApiFullRepo[];
@@ -22,7 +23,7 @@ export class RepoInformationComponent implements OnInit{
   cardSelected: any;
 
   ngOnInit(): void {
-    this.getUserRepos();
+    this.getUserRepos(); 
   }
 
   getUserRepos(){
