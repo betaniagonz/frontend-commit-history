@@ -12,5 +12,5 @@ import { HeaderComponent } from './home/header/header.component';
     imports: [RouterOutlet, HeaderComponent]
 })
 export class AppComponent {
-  title = 'gitHubViewer';
+  title = 'My commit history';
 }
